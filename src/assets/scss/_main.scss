@@ -10,6 +10,32 @@ a,
 button{
 	@include ba-transition;
 }
+p{margin: 0;}
+.row{
+	padding: 0 10px;
+	@include breakpoint(large) {
+		padding: 0 20px;
+	}
+}
+.section-bottom-line{
+	padding-top: 40px;
+	border-bottom: 1px solid #d4d4d4;
+	width: 100%;
+	height: 100%;
+}
+.ba-simple-button{
+	padding: 20px 20px;
+	min-width: 240px;
+	background: $primary-color;
+	font-family: HelveticaBold;
+	color: #000;
+	display: inline-block;
+
+	&:hover{
+		background: $secondary-color;
+		color: #fff;
+	}
+}
 
 //Placeholder Transition
 input::-webkit-input-placeholder, textarea::-webkit-input-placeholder       {opacity: 1; transition: opacity 1s ease;}

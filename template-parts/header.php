@@ -72,9 +72,9 @@
                 </div>
                 <!-- /.ba-header__franchise-icon -->
                 <div class="ba-header__franchise-text">
-                    <h3 class="ba-header__franchise-title">
+                    <h2 class="ba-header__franchise-title">
                         <?php the_field('header_franchise_title', 'options'); ?>
-                    </h3>
+                    </h2>
                     <!-- /.ba-header__franchise-title -->
                     <p class="ba-header__franchise-desc">
                         <?php the_field('header_fanchise_description', 'options'); ?>
