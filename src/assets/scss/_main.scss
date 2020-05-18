@@ -1,0 +1,39 @@
+svg{
+	display: inline-block;
+	vertical-align: middle;
+	fill: currentColor;
+	@include ba-transition('fill, stroke');
+}
+a,
+[type="submit"],
+[type="button"],
+button{
+	@include ba-transition;
+}
+
+//Placeholder Transition
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder       {opacity: 1; transition: opacity 1s ease;}
+input::-moz-placeholder, textarea::-moz-placeholder                {opacity: 1; transition: opacity 1s ease;}
+input:-moz-placeholder, textarea:-moz-placeholder                 {opacity: 1; transition: opacity 1s ease;}
+input:-ms-input-placeholder, textarea:-ms-input-placeholder            {opacity: 1; transition: opacity 1s ease;}
+input:focus::-webkit-input-placeholder, textarea:focus::-webkit-input-placeholder {opacity: 0; transition: opacity 1s ease;}
+input:focus::-moz-placeholder, textarea:focus::-moz-placeholder        {opacity: 0; transition: opacity 1s ease;}
+input:focus:-moz-placeholder, textarea:focus:-moz-placeholder           {opacity: 0; transition: opacity 1s ease;}
+input:focus:-ms-input-placeholder, textarea:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 1s ease;}
+
+//
+.menu{
+	.is-active{
+		> a {
+			background: transparent;
+			color: $secondary-color!important;
+		}
+	}
+
+	a{
+		transition: all .5s;
+		&:hover{
+			color: $primary-color!important;
+		}
+	}
+}
