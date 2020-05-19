@@ -61,3 +61,9 @@ function acf_wysiwyg_remove_wpautop() {
     remove_filter('acf_the_content', 'wpautop' );
 }
 add_action('acf/init', 'acf_wysiwyg_remove_wpautop');
+
+add_image_size('news_thumbnail', 385, 275, true);
+
+//Remove 'p' in content and excerpt
+remove_filter('term_description','wpautop');
+remove_filter( 'the_excerpt', 'wpautop' );

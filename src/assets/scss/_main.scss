@@ -16,8 +16,11 @@ p{margin: 0;}
 	@include breakpoint(large) {
 		padding: 0 20px;
 	}
+	.column{
+		padding: 0;
+	}
 }
-.section-bottom-line{
+.ba-section-bottom-line{
 	padding-top: 40px;
 	border-bottom: 1px solid #d4d4d4;
 	width: 100%;

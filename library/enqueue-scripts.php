@@ -54,7 +54,11 @@ if ( ! function_exists( 'foundationpress_scripts' ) ) :
 		// CDN hosted jQuery migrate for compatibility with jQuery 3.x
 		wp_register_script( 'jquery-migrate', '//code.jquery.com/jquery-migrate-3.0.1.min.js', array('jquery'), '3.0.1', false );
 
-		// Enqueue jQuery migrate. Uncomment the line below to enable.
+		//Slick slider
+        wp_enqueue_style( 'slick-slider-css', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css');
+        wp_enqueue_script( 'slick-slider-js', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', '', '1.8.1', true );
+
+        // Enqueue jQuery migrate. Uncomment the line below to enable.
 		// wp_enqueue_script( 'jquery-migrate' );
 
 		// Enqueue Foundation scripts

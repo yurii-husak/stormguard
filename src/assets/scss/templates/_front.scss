@@ -1,4 +1,4 @@
-.ba-services-wrapper{
+.ba-services__wrapper{
   padding-top: 30px;
   @include breakpoint(medium) {
     padding-top: 45px;
@@ -80,6 +80,129 @@
         margin-top: 5px;
         margin-bottom: 0;
         line-height: 23px;
+      }
+    }
+  }
+}
+
+.ba-latest-news__wrapper{
+  padding-top: 30px;
+
+  .ba-latest-news__title{
+    color: $secondary-color;
+    font-family: Eurostile-Demi;
+    text-align: center;
+    line-height: 1;
+    margin-bottom: 25px;
+  }
+
+  .ba-news__content{
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    @include breakpoint(820px) {
+      justify-content: space-between;
+      flex-direction: row;
+    }
+
+
+    .ba-news__item{
+      position: relative;
+      border: 1px solid #e1e1e1;
+      max-width: 384px;
+      width: 100%;
+      margin-bottom: 30px;
+      @include breakpoint(820px) {
+        margin-right: 30px;
+
+        &:nth-child(2n + 2){
+          margin-right: 0;
+        }
+      }
+
+      @include breakpoint(large) {
+        margin-right: 0;
+      }
+
+      .ba-news__date{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 60px;
+        height: 60px;
+        background: $primary-color;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        .ba-news-date__month{
+          font-size: 16px;
+          font-family: Eurostile;
+          color: #000;
+          line-height: 1;
+          text-transform: uppercase;
+        }
+
+        .ba-news-date__day{
+          font-size: 28px;
+          font-family: Eurostile-Demi;
+          color: #000;
+          line-height: 1;
+          margin-top: 1px;
+        }
+      }
+
+      .ba-news__image{
+        width: 100%;
+        height: 275px;
+      }
+
+      .ba-news__title{
+        font-size: 32px;
+        font-family: Eurostile-Demi;
+        line-height: 36px;
+        color: #000;
+        padding: 0 15px;
+        display: inline-block;
+        margin: 10px 0;
+
+        &:hover{
+          color: $secondary-color;
+        }
+      }
+
+      .ba-news__text{
+        padding: 0 15px;
+        font-size: 16px;
+        line-height: 24px;
+        margin-bottom: 20px;
+
+        .ba-news__readmore{
+          display: inline-block;
+          color: $secondary-color;
+          border-bottom: 1px solid $secondary-color;
+
+          &:hover{
+            opacity: 0.5;
+          }
+        }
+      }
+      
+      .ba-news__author{
+        text-transform: uppercase;
+        padding: 10px 15px;
+        font-size: 14px;
+        font-family: HelveticaBold;
+        border-top: 1px solid #e1e1e1;
+
+        a{
+          color: #000;
+
+          &:hover{
+            color: $secondary-color;
+          }
+        }
       }
     }
   }

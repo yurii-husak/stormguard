@@ -1,0 +1,108 @@
+.ba-testimonials__wrapper{
+  padding: 20px 0 10px;
+  background: #f7f8f8;
+  @include breakpoint(medium) {
+    padding: 35px 0 20px;
+  }
+  @include breakpoint(large) {
+    padding: 50px 0 30px;
+  }
+
+  .ba-testimonials-section__title{
+    font-family: Eurostile-Demi;
+    color: $secondary-color;
+    line-height: 1;
+    text-align: center;
+    padding-bottom: 15px;
+    @include breakpoint(medium) {
+      padding-bottom: 25px;
+    }
+    @include breakpoint(large) {
+      padding-bottom: 35px;
+    }
+  }
+
+  .ba-testimonials__item{
+    outline: none;
+    padding: 0 5px;
+    .ba-testimonials-item__text{
+      background: #fff;
+      padding: 10px 10px;
+      font-size: 12px;
+      line-height: 18px;
+      font-family: HelveticaOblique;
+      @include breakpoint(medium) {
+        font-size: 16px;
+        padding: 25px 20px;
+        line-height: 22px;
+      }
+      @include breakpoint(large) {
+        font-size: 20px;
+        line-height: 26px;
+      }
+    }
+
+    .ba-testimonials-item__name{
+      font-family: HelveticaOblique;
+      font-size: 12px;
+      margin-top: 10px;
+      line-height: 1;
+      text-align: right;
+      @include breakpoint(medium) {
+        font-size: 14px;
+        margin-top: 15px;
+      }
+    }
+
+    .ba-testimonials-item__position{
+      font-family: HelveticaOblique;
+      font-size: 12px;
+      margin-top: 5px;
+      line-height: 1;
+      text-align: right;
+      @include breakpoint(medium) {
+        font-size: 14px;
+        margin-top: 8px;
+      }
+    }
+  }
+
+  //Slider dots - testimonials
+  .slick-dots{
+    margin: 5px 0 0 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    @include breakpoint(medium) {
+      margin: 20px 0 0 0;
+    }
+
+    li{
+      width: 11px;
+      height: 11px;
+      background: #fff;
+      border: 1px solid #d8d8d8;
+      border-radius: 50%;
+      box-sizing: border-box;
+      margin-right: 7px;
+      cursor: pointer;
+      &:last-child{
+        margin-right: 0;
+      }
+
+      @include breakpoint(medium) {
+        width: 14px;
+        height: 14px;
+      }
+
+      button{
+        display: none;
+      }
+    }
+
+    .slick-active{
+      border-color: #000;
+      background: #000;
+    }
+  }
+}
