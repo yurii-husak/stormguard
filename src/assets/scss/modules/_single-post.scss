@@ -1,0 +1,22 @@
+.ba-single-post{
+  padding-bottom: 30px!important;
+  border-bottom: 1px solid #d4d4d4;
+}
+.ba-single-post__image{
+  float: left;
+  margin-bottom: 10px;
+  @include breakpoint(medium) {
+    margin-right: 20px;
+  }
+}
+.ba-single-post__title{
+  font-size: 34px;
+  font-family: Eurostile-Demi;
+  color: $secondary-color;
+  line-height: 1;
+  margin-bottom: 20px;
+}
+.ba-single-post__content{
+  font-size: 16px;
+  line-height: 23px;
+}

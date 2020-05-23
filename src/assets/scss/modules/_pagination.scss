@@ -1,0 +1,48 @@
+.pagination{
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  @include breakpoint(medium) {
+    margin: 15px 0;
+  }
+
+
+  li{
+    margin-right: 15px;
+    &:last-child{
+      margin-right: 0;
+    }
+
+    span{
+      padding: 7px 10px;
+      background: $primary-color;
+      color: $secondary-color;
+      border-radius: 5px;
+      font-family: HelveticaBold;
+      font-size: 12px;
+      @include breakpoint(medium) {
+        padding: 10px 15px;
+        font-size: 16px;
+      }
+    }
+
+    a{
+      padding: 7px 10px;
+      background: $secondary-color;
+      color: $primary-color;
+      border-radius: 5px;
+      font-family: HelveticaBold;
+      font-size: 12px;
+
+      &:hover{
+        opacity: 0.5;
+      }
+
+      @include breakpoint(medium) {
+        font-size: 16px;
+        padding: 10px 15px;
+      }
+    }
+  }
+}

@@ -1,17 +1,36 @@
 {
     "key": "group_5ec3c11fe4c20",
-    "title": "Latest news - title",
+    "title": "News - title",
     "fields": [
         {
             "key": "field_5ec3c12a40d26",
-            "label": "Latest news - title",
-            "name": "latest_news_title",
+            "label": "News Title (front page)",
+            "name": "news_title_front_page",
             "type": "text",
             "instructions": "",
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5ec66fa038a7c",
+            "label": "News Title (blog page)",
+            "name": "news_title_blog_page",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -25,13 +44,13 @@
     "location": [
         [
             {
-                "param": "page_template",
+                "param": "options_page",
                 "operator": "==",
-                "value": "page-templates\/front.php"
+                "value": "acf-options-theme-options"
             }
         ]
     ],
-    "menu_order": 0,
+    "menu_order": 4,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
@@ -41,5 +60,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1589887300
+    "modified": 1590063028
 }

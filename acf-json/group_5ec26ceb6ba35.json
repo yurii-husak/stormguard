@@ -4,8 +4,27 @@
     "fields": [
         {
             "key": "field_5ec26cef2d406",
-            "label": "Services Title",
-            "name": "services_title",
+            "label": "Services Title (front page)",
+            "name": "services_title_front_page",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5ec6670231122",
+            "label": "Services Title (single page)",
+            "name": "services_title_single_page",
             "type": "text",
             "instructions": "",
             "required": 1,
@@ -23,8 +42,27 @@
         },
         {
             "key": "field_5ec26d032d407",
-            "label": "Services Description",
-            "name": "services_description",
+            "label": "Services Description (front page)",
+            "name": "services_description_front_page",
+            "type": "textarea",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 3,
+            "new_lines": "br"
+        },
+        {
+            "key": "field_5ec6672731123",
+            "label": "Services Description (single page)",
+            "name": "services_description_single_page",
             "type": "textarea",
             "instructions": "",
             "required": 1,
@@ -50,7 +88,7 @@
             }
         ]
     ],
-    "menu_order": 0,
+    "menu_order": 2,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
@@ -58,5 +96,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1589800331
+    "modified": 1590060879
 }

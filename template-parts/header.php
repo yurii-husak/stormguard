@@ -65,7 +65,7 @@
                             <?php the_field('header_title', 'options'); ?>
                         </h1>
                         <!-- /.ba-header__content-title -->
-                        <a href="#" class="ba-header__contact-button">
+                        <a href="#ba-footer" class="ba-header__contact-button">
                             Contact Us Today <i class="fa fa-chevron-right"></i>
                         </a>
                         <!-- /.ba-header__contact-button -->
@@ -76,8 +76,9 @@
             </div>
             <!-- /.ba-header__content -->
         <?php endif; ?>
-
     </div>
     <!-- /.ba-header__content-wrapper -->
+
+    <?php if($page != '/') echo get_template_part('template-parts/content', 'breadcrumbs')?>
 
 </header>

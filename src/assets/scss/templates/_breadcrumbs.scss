@@ -1,0 +1,31 @@
+.ba-breadcrumbs{
+  padding: 20px 0;
+  border-bottom: 1px solid #d4d4d4;
+  margin-bottom: 25px;
+
+  span{
+    ~.current-item{
+      margin-left: 10px;
+    }
+    &:first-child{
+      a{
+        margin-left: 0;
+      }
+    }
+    &:last-child{
+      a{
+        margin-right: 0;
+      }
+    }
+
+    a{
+      color: $secondary-color;
+      border-bottom: 1px solid $secondary-color;
+      margin: 0 10px;
+
+      &:hover{
+        opacity: 0.5;
+      }
+    }
+  }
+}

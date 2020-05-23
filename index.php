@@ -40,8 +40,6 @@ get_header(); ?>
 
 		</div>
 		<!-- /.column medium-8 -->
-
-		<?php get_sidebar(); ?>
 	</div>
 	<!-- /.row -->
 </main>

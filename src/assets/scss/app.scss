@@ -70,6 +70,8 @@
 @import "modules/content";
 @import "modules/footer";
 @import "modules/editor-style";
+@import "modules/single-post";
+@import "modules/pagination";
 
 // Components
 @import "components/buttons";
@@ -79,3 +81,5 @@
 @import "templates/front";
 @import "templates/franchise";
 @import "templates/testimonials";
+@import "templates/breadcrumbs";
+@import "templates/single-all_services";

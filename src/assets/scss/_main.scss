@@ -33,6 +33,8 @@ p{margin: 0;}
 	font-family: HelveticaBold;
 	color: #000;
 	display: inline-block;
+	margin: 0 auto;
+	text-align: center;
 
 	&:hover{
 		background: $secondary-color;

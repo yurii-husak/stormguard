@@ -8,46 +8,20 @@
 
 get_header(); ?>
 <main class="ba-main-content">
-	<div class="row">
-		<?php while ( have_posts() ) : the_post(); ?>
-			<div class="column medium-8">
-			<article <?php post_class('') ?> id="post-<?php the_ID(); ?>">
-				<?php
-					if ( has_post_thumbnail() ) :
-						the_post_thumbnail();
-					endif;
-				?>
+    <article class="row">
+        <?php while ( have_posts() ) : the_post(); ?>
+            <div class="column ba-single-post">
+                <?php the_post_thumbnail('single_post', ['class' => 'ba-single-post__image']); ?>
+                <h3 class="ba-single-post__title"><?php the_title(); ?></h3>
+                <!-- /.ba-single-post__title -->
+                <div class="ba-single-post__content"><?php the_content(); ?></div>
+                <!-- /.ba-single-post__content -->
+            </div>
+            <!-- /.column ba-services__single-post -->
+        <?php endwhile;?>
+    </article>
 
-				<h1 class="entry-title"><?php the_title(); ?></h1>
-
-				<?php foundationpress_entry_meta(); ?>
-
-				<div class="entry-content">
-					<?php the_content(); ?>
-				</div>
-
-				<?php wp_link_pages( array('before' => '<nav id="page-nav"><p>' . __( 'Pages:', 'foundationpress' ), 'after' => '</p></nav>' ) ); ?>
-
-				<?php the_tags('<p>'.__('Tags').': ', ', ', '</p>'); ?>
-
-				<?php the_post_navigation(); ?>
-
-				<?php edit_post_link( __( 'Edit', 'foundationpress' ), '<span class="edit-link">', '</span>' ); ?>
-
-			</article>
-
-			<?php comments_template(); ?>
-
-			</div>
-			<!-- /.column medium-8 -->
-
-		<?php endwhile;?>
-
-		<?php get_sidebar(); ?>
-		<!-- /.column medium-4 -->
-
-	</div>
-	<!-- .row -->
+    <?php echo get_template_part('template-parts/content', 'franchise'); ?>
 </main>
 
 <?php get_footer();

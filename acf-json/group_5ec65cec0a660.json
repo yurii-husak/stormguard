@@ -1,21 +1,21 @@
 {
-    "key": "group_5ec2b30fbf3a4",
-    "title": "Header image",
+    "key": "group_5ec65cec0a660",
+    "title": "Service Image",
     "fields": [
         {
-            "key": "field_5ec2b316eccaf",
-            "label": "Header image",
-            "name": "header_image",
+            "key": "field_5ec65cf308d6e",
+            "label": "Service Image",
+            "name": "service_image",
             "type": "image",
             "instructions": "",
-            "required": 0,
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
-            "return_format": "url",
+            "return_format": "array",
             "preview_size": "thumbnail",
             "library": "all",
             "min_width": "",
@@ -30,34 +30,13 @@
     "location": [
         [
             {
-                "param": "options_page",
-                "operator": "==",
-                "value": "acf-options-theme-options"
-            }
-        ],
-        [
-            {
                 "param": "post_type",
                 "operator": "==",
                 "value": "all_services"
             }
-        ],
-        [
-            {
-                "param": "page_parent",
-                "operator": "==",
-                "value": "19"
-            }
-        ],
-        [
-            {
-                "param": "page_parent",
-                "operator": "==",
-                "value": "19"
-            }
         ]
     ],
-    "menu_order": 1,
+    "menu_order": 0,
     "position": "side",
     "style": "default",
     "label_placement": "top",
@@ -65,5 +44,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1590058335
+    "modified": 1590058521
 }

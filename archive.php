@@ -19,7 +19,7 @@ get_header(); ?>
 
 <main class="ba-main-content">
 	<div class="row">
-		<div class="column medium-8">
+		<div class="column medium-12">
 			<?php if ( have_posts() ) : ?>
 
 				<div class="page-header">
@@ -48,10 +48,7 @@ get_header(); ?>
 			<?php } ?>
 
 		</div>
-		<!-- /.column medium-8 -->
-
-		<?php get_sidebar(); ?>
-		<!-- /.column medium-4 -->
+		<!-- /.column medium-12 -->
 	</div>
 	<!-- /.row -->
 </main>

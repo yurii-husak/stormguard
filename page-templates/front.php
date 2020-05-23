@@ -9,9 +9,9 @@ get_header(); ?>
 
 	<section class="ba-services__wrapper">
         <div class="row ba-services-row">
-            <h3 class="column small-12 ba-services-title"><?php the_field('services_title', 'options'); ?></h3>
+            <h3 class="column small-12 ba-services-title"><?php the_field('services_title_front_page', 'options'); ?></h3>
             <!-- /.column small-12 ba-services-title -->
-            <p class="column small-12 ba-services-desc"><?php the_field('services_description', 'options'); ?></p>
+            <p class="column small-12 ba-services-desc"><?php the_field('services_description_front_page', 'options'); ?></p>
             <!-- /.column small-12 ba-services-desc -->
         </div>
         <!-- /.row ba-services-row -->
@@ -30,7 +30,7 @@ get_header(); ?>
                             <!-- /.ba-services-item__image -->
                             <a href="<?php echo get_post_permalink(); ?>" class="ba-services-item__title"><?php the_title(); ?></a>
                             <!-- /.ba-services-item__title -->
-                            <div class="ba-services-item__desc"><?php the_content(); ?></div>
+                            <div class="ba-services-item__desc"><?php the_excerpt(); ?></div>
                             <!-- /.ba-services-item__desc -->
                         </article>
                         <!-- /.column large-4 medium-6 small-12 ba-services-item -->
@@ -53,9 +53,9 @@ get_header(); ?>
 
     <?php echo get_template_part('template-parts/content', 'testimonials'); ?>
 
-    <section class="ba-latest-news__wrapper">
+    <section class="ba-news__wrapper">
         <div class="row column">
-            <h3 class="ba-latest-news__title"><?php the_field('latest_news_title'); ?></h3>
+            <h3 class="ba-news__title"><?php the_field('news_title_front_page', 'options'); ?></h3>
             <!-- /.ba-latest-news__title -->
         </div>
         <!-- /.row column -->
@@ -69,7 +69,7 @@ get_header(); ?>
         <?php if($posts->have_posts()): ?>
             <div class="row ba-news__content">
                 <?php while($posts->have_posts()): $posts->the_post() ?>
-                    <div class="column small-12 medium-6 large-4 ba-news__item">
+                    <article class="column small-12 medium-6 large-4 ba-news__item">
                         <div class="ba-news__date">
                             <div class="ba-news-date__month"><?php echo get_the_date('M', get_the_ID()) ?></div>
                             <!-- /.ba-news-date__month -->
@@ -90,9 +90,16 @@ get_header(); ?>
                             By <?php echo get_the_author_posts_link(); ?>
                         </div>
                         <!-- /.ba-news__author -->
-                    </div>
+                    </article>
                     <!-- /.column small-12 medium-6 large-4 ba-news__item -->
                 <?php endwhile; ?>
+
+                <div class="column small-12 ba-last-news__link">
+                    <a class="ba-simple-button" href="<?php echo get_post_type_archive_link('post'); ?>">
+                        View All Posts
+                    </a>
+                </div>
+                <!-- /.column small-12 ba-last-news__link -->
             </div>
             <!-- /.row ba-news__content -->
         <?php endif;?>
