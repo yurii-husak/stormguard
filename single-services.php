@@ -16,52 +16,52 @@
         <?php endwhile;?>
     </article>
 
-    <section class="ba-services__wrapper ba-services__single">
-        <div class="row ba-services-row">
-            <h3 class="column small-12 ba-services-title"><?php the_field('services_title_single_page', 'options'); ?></h3>
-            <!-- /.column small-12 ba-services-title -->
-            <p class="column small-12 ba-services-desc"><?php the_field('services_description_single_page', 'options'); ?></p>
-            <!-- /.column small-12 ba-services-desc -->
+    <section class="ba-services ba-services--front">
+        <div class="row ba-services__row">
+            <h3 class="column small-12 ba-services__title"><?php the_field('services_title_single_page', 'options'); ?></h3>
+            <!-- /.column small-12 ba-services__title -->
+            <p class="column small-12 ba-services__desc"><?php the_field('services_description_single_page', 'options'); ?></p>
+            <!-- /.column small-12 bba-services__desc -->
         </div>
-        <!-- /.row ba-services-row -->
+        <!-- /.row ba-services__row -->
 
         <?php
         $servicesArgs = array(
-            'post_type'=>'all_services',
+            'post_type'=>'services',
             'posts_per_page'=> 6,
             'post__not_in'=> [$post_id],
         );
         $services = new WP_Query($servicesArgs);?>
         <?php if($services->have_posts()): ?>
-            <div class="row ba-services-items-row align-left">
+            <div class="row ba-services__content">
                 <?php $count_posts = 0 ?>
                 <?php while($services->have_posts()): $services->the_post() ?>
-                    <article class="column large-4 medium-6 small-12 ba-services-item">
-                        <div class="ba-services-item__image"><?php the_post_thumbnail() ?></div>
-                        <!-- /.ba-services-item__image -->
-                        <a href="<?php echo get_post_permalink(); ?>" class="ba-services-item__title"><?php the_title(); ?></a>
-                        <!-- /.ba-services-item__title -->
-                        <div class="ba-services-item__desc"><?php the_excerpt(); ?></div>
-                        <!-- /.ba-services-item__desc -->
+                    <article class="column large-4 medium-6 small-12 ba-services__item">
+                        <div class="ba-services__item-image"><?php the_post_thumbnail() ?></div>
+                        <!-- /.ba-services__item-image -->
+                        <a href="<?php echo get_post_permalink(); ?>" class="ba-services__item-title"><?php the_title(); ?></a>
+                        <!-- /.ba-services__item-title -->
+                        <div class="ba-services__item-desc"><?php the_excerpt(); ?></div>
+                        <!-- /.ba-services__item-desc -->
                     </article>
-                    <!-- /.column large-4 medium-6 small-12 ba-services-item -->
+                    <!-- /.column large-4 medium-6 small-12 ba-services__item -->
                     <?php $count_posts++; ?>
                 <?php endwhile; ?>
 
                 <?php $count_posts = 6 - $count_posts; ?>
                 <?php for($i = 0; $i < $count_posts; $i++) : ?>
-                    <article class="column large-4 medium-6 small-12 ba-services-item"></article>
-                    <!-- /.column large-4 medium-6 small-12 ba-services-item -->
+                    <article class="column large-4 medium-6 small-12 ba-services__item"></article>
+                    <!-- /.column large-4 medium-6 small-12 ba-services__item -->
                 <?php endfor; ?>
 
                 <div class="ba-single-service__line"></div>
                 <!-- /.ba-single-service__line -->
             </div>
-            <!-- /.row ba-services-items-row -->
+            <!-- /.row ba-services__content -->
         <?php endif;?>
         <?php wp_reset_postdata(); ?>
     </section>
-    <!-- /.ba-services__wrapper ba-services__single -->
+    <!-- /.ba-services -->
 
     <?php echo get_template_part('template-parts/content', 'franchise'); ?>
 </main>

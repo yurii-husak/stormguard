@@ -45,12 +45,12 @@
 }
 
 
-.ba-header__first-top-bar-wrapper{
+.ba-header__top-bar{
 	background: #000;
 	font-size: 14px;
 	font-family: HelveticaBold;
 
-	.ba-header__first-top-bar{
+	.top-bar__row{
 		justify-content: space-between;
 		align-items: center;
 		height: 52px;
@@ -59,7 +59,7 @@
 			padding: 0 20px;
 		}
 
-		.ba-first-top-bar__left{
+		.top-bar__left-side{
 			a{
 				color: $primary-color;
 				line-height: 1;
@@ -81,7 +81,7 @@
 			}
 		}
 
-		.ba-first-top-bar__right{
+		.top-bar__right-side{
 			ul{
 				li{
 					margin-right: 23px;
@@ -99,11 +99,11 @@
 	}
 }
 
-.ba-header__content-wrapper{
+.ba-header{
 	position: relative;
 	min-height: 265px;
 
-	.ba-header__second-top-bar-wrapper{
+	.ba-header__nav{
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -111,7 +111,7 @@
 		z-index: 2;
 		width: 100%;
 
-		.ba-header__second-top-bar{
+		.ba-header-nav__row{
 			justify-content: center;
 			align-items: center;
 			height: 80px;
@@ -120,7 +120,7 @@
 				justify-content: space-between;
 			}
 
-			.ba-second-top-bar__right{
+			.ba-header-nav__right-side{
 				ul{
 					li{
 						margin-right: 25px;
@@ -159,7 +159,7 @@
 			padding-bottom: 120px;
 		}
 
-		.ba-header__content-text-wrapper{
+		.ba-header__content-row{
 			padding-top: 100px;
 			@include breakpoint(large) {
 				padding-top: 170px;

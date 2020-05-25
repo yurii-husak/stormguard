@@ -72,3 +72,16 @@ remove_filter( 'the_excerpt', 'wpautop' );
 
 //Contact Form 7 remove "p"
 add_filter( 'wpcf7_autop_or_not', '__return_false' );
+
+function custom_posts_per_page($query){
+    if(is_home()){
+        $query->set('posts_per_page', 3);
+    }
+    if(is_search()){
+        $query->set('posts_per_page', -1);
+    }
+    if(is_archive()){
+        $query->set('posts_per_page', 3);
+    }
+}
+add_action('pre_get_posts','custom_posts_per_page');

@@ -11,6 +11,18 @@ button{
 	@include ba-transition;
 }
 p{margin: 0;}
+.page-header{
+	.page-title{
+		text-align: center;
+		color: $secondary-color;
+		font-family: Eurostile-Demi;
+		margin-bottom: 30px;
+		
+		span{
+			color: #000;
+		}
+	}
+}
 .row{
 	padding: 0 10px;
 	@include breakpoint(large) {

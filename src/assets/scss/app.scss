@@ -72,6 +72,7 @@
 @import "modules/editor-style";
 @import "modules/single-post";
 @import "modules/pagination";
+@import "modules/services";
 
 // Components
 @import "components/buttons";
@@ -82,4 +83,5 @@
 @import "templates/franchise";
 @import "templates/testimonials";
 @import "templates/breadcrumbs";
-@import "templates/single-all_services";
+@import "templates/single-services";
+@import "templates/file_not_found";

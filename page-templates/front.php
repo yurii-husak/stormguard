@@ -7,105 +7,65 @@ get_header(); ?>
 <main class="ba-main-content">
     <?php echo get_template_part('template-parts/content', 'franchise'); ?>
 
-	<section class="ba-services__wrapper">
-        <div class="row ba-services-row">
-            <h3 class="column small-12 ba-services-title"><?php the_field('services_title_front_page', 'options'); ?></h3>
-            <!-- /.column small-12 ba-services-title -->
-            <p class="column small-12 ba-services-desc"><?php the_field('services_description_front_page', 'options'); ?></p>
-            <!-- /.column small-12 ba-services-desc -->
+	<section class="ba-services ba-services--front">
+        <div class="row ba-services__row">
+            <h3 class="column small-12 ba-services__title"><?php the_field('services_title_front_page', 'options'); ?></h3>
+            <!-- /.column small-12 ba-services__title -->
+            <p class="column small-12 ba-services__desc"><?php the_field('services_description_front_page', 'options'); ?></p>
+            <!-- /.column small-12 bba-services__desc -->
         </div>
-        <!-- /.row ba-services-row -->
+        <!-- /.row ba-services__row -->
 
         <?php
         $servicesArgs = array(
-        	'post_type'=>'all_services',
+        	'post_type'=>'services',
         	'posts_per_page'=> 6,
         );
         	$services = new WP_Query($servicesArgs);?>
         	<?php if($services->have_posts()): ?>
-                <div class="row ba-services-items-row">
+                <div class="row ba-services__content">
                     <?php while($services->have_posts()): $services->the_post() ?>
-                        <article class="column large-4 medium-6 small-12 ba-services-item">
-                            <div class="ba-services-item__image"><?php the_post_thumbnail() ?></div>
-                            <!-- /.ba-services-item__image -->
-                            <a href="<?php echo get_post_permalink(); ?>" class="ba-services-item__title"><?php the_title(); ?></a>
-                            <!-- /.ba-services-item__title -->
-                            <div class="ba-services-item__desc"><?php the_excerpt(); ?></div>
-                            <!-- /.ba-services-item__desc -->
+                        <article class="column large-4 medium-6 small-12 ba-services__item">
+                            <div class="ba-services__item-image"><?php the_post_thumbnail() ?></div>
+                            <!-- /.ba-services__item-image -->
+                            <a href="<?php echo get_post_permalink(); ?>" class="ba-services__item-title"><?php the_title(); ?></a>
+                            <!-- /.ba-services__item-title -->
+                            <div class="ba-services__item-desc"><?php the_excerpt(); ?></div>
+                            <!-- /.ba-services__item-desc -->
                         </article>
-                        <!-- /.column large-4 medium-6 small-12 ba-services-item -->
+                        <!-- /.column large-4 medium-6 small-12 ba-services__item -->
                     <?php endwhile; ?>
 
-                    <div class="column small-12 ba-services-link">
-                        <a class="ba-simple-button" href="<?php echo get_post_type_archive_link('all_services'); ?>">
+                    <div class="column small-12 ba-services__link">
+                        <a class="ba-simple-button" href="<?php echo get_post_type_archive_link('services'); ?>">
                             View All Services
                         </a>
                     </div>
-                    <!-- /.column small-12 ba-services-link -->
+                    <!-- /.column small-12 ba-services__link -->
                     <div class="ba-section-bottom-line"></div>
                     <!-- /.ba-section-bottom-line -->
                 </div>
-                <!-- /.row ba-services-items-row -->
+                <!-- /.row ba-services__content -->
         	<?php endif;?>
         <?php wp_reset_postdata(); ?>
     </section>
-	<!-- /.ba-services__wrapper -->
+	<!-- /.ba-services -->
 
     <?php echo get_template_part('template-parts/content', 'testimonials'); ?>
 
-    <section class="ba-news__wrapper">
+    <section class="ba-news ba-news--front ">
         <div class="row column">
             <h3 class="ba-news__title"><?php the_field('news_title_front_page', 'options'); ?></h3>
-            <!-- /.ba-latest-news__title -->
+            <!-- /.ba-news__title -->
         </div>
         <!-- /.row column -->
 
-        <?php
-        $postsArgs = array(
-            'post_type'=>'post',
-            'posts_per_page'=>3,
-        );
-        $posts = new WP_Query($postsArgs);?>
-        <?php if($posts->have_posts()): ?>
-            <div class="row ba-news__content">
-                <?php while($posts->have_posts()): $posts->the_post() ?>
-                    <article class="column small-12 medium-6 large-4 ba-news__item">
-                        <div class="ba-news__date">
-                            <div class="ba-news-date__month"><?php echo get_the_date('M', get_the_ID()) ?></div>
-                            <!-- /.ba-news-date__month -->
-                            <div class="ba-news-date__day"><?php echo get_the_date('j', get_the_ID()) ?></div>
-                            <!-- /.ba-news-date__day -->
-                        </div>
-                        <!-- /.ba-news__date -->
-                        <div class="ba-news__image" style="background-image: url('<?php the_post_thumbnail_url('news_thumbnail') ?>');"></div>
-                        <!-- /.ba-news__image -->
-                        <a href="<?php echo get_permalink(); ?>" class="ba-news__title"><?php the_title(); ?></a>
-                        <!-- /.ba-news__title -->
-                        <p class="ba-news__text">
-                            <?php the_excerpt(); ?>
-                            <a href="<?php echo get_permalink(); ?>" class="ba-news__readmore">Read more</a>
-                        </p>
-                        <!-- /.ba-news__text -->
-                        <div class="ba-news__author">
-                            By <?php echo get_the_author_posts_link(); ?>
-                        </div>
-                        <!-- /.ba-news__author -->
-                    </article>
-                    <!-- /.column small-12 medium-6 large-4 ba-news__item -->
-                <?php endwhile; ?>
+        <?php echo get_template_part('template-parts/content', 'news'); ?>
 
-                <div class="column small-12 ba-last-news__link">
-                    <a class="ba-simple-button" href="<?php echo get_post_type_archive_link('post'); ?>">
-                        View All Posts
-                    </a>
-                </div>
-                <!-- /.column small-12 ba-last-news__link -->
-            </div>
-            <!-- /.row ba-news__content -->
-        <?php endif;?>
-        <?php wp_reset_postdata(); ?>
     </section>
-    <!-- /.ba-latest-news__wrapper -->
+    <!-- /.ba-news ba-news--front -->
+
+
 </main>
 
 <?php get_footer(); ?>

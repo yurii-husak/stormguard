@@ -18,39 +18,66 @@
 get_header(); ?>
 
 <main class="ba-main-content">
-	<div class="row">
-		<div class="column medium-12">
-			<?php if ( have_posts() ) : ?>
+    <!-- Service Archive Page -->
+    <?php if (is_post_type_archive('services')) : ?>
+        <?php if(have_posts()) : ?>
+            <section class="ba-services">
+                <div class="row ba-services__row">
+                    <h3 class="column small-12 ba-services__title"><?php the_field('services_title_front_page', 'options'); ?></h3>
+                    <!-- /.column small-12 ba-services__title -->
+                    <p class="column small-12 ba-services__desc"><?php the_field('services_description_front_page', 'options'); ?></p>
+                    <!-- /.column small-12 bba-services__desc -->
+                </div>
+                <!-- /.row ba-services__row -->
+                <div class="row ba-services__content">
+                    <?php while( have_posts() ) : the_post(); ?>
+                        <article class="column large-4 medium-6 small-12 ba-services__item">
+                            <div class="ba-services__item-image"><?php the_post_thumbnail() ?></div>
+                            <!-- /.ba-services__item-image -->
+                            <a href="<?php echo get_post_permalink(); ?>" class="ba-services__item-title"><?php the_title(); ?></a>
+                            <!-- /.ba-services__item-title -->
+                            <div class="ba-services__item-desc"><?php the_excerpt(); ?></div>
+                            <!-- /.ba-services__item-desc -->
+                        </article>
+                        <!-- /.column large-4 medium-6 small-12 ba-services__item -->
+                    <?php endwhile; ?>
+                </div>
+                <!-- /.row ba-services__content -->
+            </section>
+            <!-- /.ba-services -->
+        <?php endif; ?>
+    <?php endif; ?>
 
-				<div class="page-header">
-					<?php
-						the_archive_title( '<h1 class="page-title">', '</h1>' );
-						the_archive_description( '<div class="taxonomy-description">', '</div>' );
-					?>
-				</div><!-- .page-header -->
+    <!-- All Remaining Archive Pages -->
+    <?php if(!is_post_type_archive('services')) : ?>
+        <?php if ( have_posts() ) : ?>
+            <div class="row column">
+                <div class="page-header">
+                    <?php
+                    the_archive_title( '<h1 class="page-title">', '</h1>' );
+                    the_archive_description( '<div class="taxonomy-description">', '</div>' );
+                    ?>
+                </div><!-- .page-header -->
+            </div>
+            <!-- /.row column -->
+        <?php endif; ?>
 
-				<?php /* Start the Loop */ ?>
-				<?php while ( have_posts() ) : the_post(); ?>
-					<?php get_template_part( 'template-parts/content', get_post_format() ); ?>
-				<?php endwhile; ?>
+        <?php echo get_template_part('template-parts/content', 'news'); ?>
 
-			<?php else : ?>
-				<?php get_template_part( 'template-parts/content', 'none' ); ?>
+    <?php endif; ?>
 
-			<?php endif; // End have_posts() check. ?>
+    <div class="row column">
+        <?php /* Display navigation to next/previous pages when applicable */ ?>
+        <?php if ( function_exists( 'foundationpress_pagination' ) ) { foundationpress_pagination(); } else if ( is_paged() ) { ?>
+            <nav id="post-nav">
+                <div class="post-previous"><?php next_posts_link( __( '&larr; Older posts', 'foundationpress' ) ); ?></div>
+                <div class="post-next"><?php previous_posts_link( __( 'Newer posts &rarr;', 'foundationpress' ) ); ?></div>
+            </nav>
+        <?php } ?>
+    </div>
+    <!-- /.row column -->
 
-			<?php /* Display navigation to next/previous pages when applicable */ ?>
-			<?php if ( function_exists( 'foundationpress_pagination' ) ) { foundationpress_pagination(); } else if ( is_paged() ) { ?>
-				<nav id="post-nav">
-					<div class="post-previous"><?php next_posts_link( __( '&larr; Older posts', 'foundationpress' ) ); ?></div>
-					<div class="post-next"><?php previous_posts_link( __( 'Newer posts &rarr;', 'foundationpress' ) ); ?></div>
-				</nav>
-			<?php } ?>
-
-		</div>
-		<!-- /.column medium-12 -->
-	</div>
-	<!-- /.row -->
+    <?php echo get_template_part('template-parts/content', 'franchise'); ?>
 </main>
 
 <?php get_footer();
