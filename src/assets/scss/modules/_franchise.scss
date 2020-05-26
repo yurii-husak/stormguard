@@ -1,7 +1,11 @@
-.ba-header__franchise-wrapper{
+.ba-franchise--front{
+  margin-bottom: 0!important;
+}
+.ba-franchise{
   background: $primary-color;
+  margin-bottom: 5px;
 
-  .ba-header_franchise{
+  .ba-franchise__row{
     padding: 0 10px 15px;
     min-height: 130px;
     align-items: center;
@@ -14,7 +18,7 @@
       padding: 0 20px 0 65px;
     }
 
-    .ba-header__franchise-icon{
+    .ba-franchise__icon{
       padding-right: 25px;
       display: none;
       @include breakpoint(1200) {
@@ -22,7 +26,7 @@
       }
     }
 
-    .ba-header__franchise-text{
+    .ba-franchise__text{
       padding-top: 10px;
       margin: 0 auto;
       @include breakpoint(medium) {
@@ -33,7 +37,7 @@
         padding-top: 0;
       }
 
-      .ba-header__franchise-title{
+      .ba-franchise__text-title{
         font-family: Eurostile-Demi;
         font-size: 20px;
         text-align: center;
@@ -48,7 +52,7 @@
         }
       }
 
-      .ba-header__franchise-desc{
+      .ba-franchise__text-desc{
         margin: 0;
         font-size: 12px;
         font-family: HelveticaBold;
@@ -67,7 +71,7 @@
       }
     }
 
-    .ba-header_franchise-form{
+    .ba-franchise__form{
       width: 100%;
       @include breakpoint(medium) {
         width: auto;

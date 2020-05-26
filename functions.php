@@ -73,15 +73,10 @@ remove_filter( 'the_excerpt', 'wpautop' );
 //Contact Form 7 remove "p"
 add_filter( 'wpcf7_autop_or_not', '__return_false' );
 
-function custom_posts_per_page($query){
-    if(is_home()){
-        $query->set('posts_per_page', 3);
-    }
-    if(is_search()){
-        $query->set('posts_per_page', -1);
-    }
-    if(is_archive()){
-        $query->set('posts_per_page', 3);
-    }
+//Services pagination in archive page
+function services_posts_per_page( $query ) {
+    if ( $query->query_vars['post_type'] == 'services' && is_archive() )
+        $query->query_vars['posts_per_page'] = 3;
+    return $query;
 }
-add_action('pre_get_posts','custom_posts_per_page');
+if ( !is_admin() ) add_filter( 'pre_get_posts', 'services_posts_per_page' );

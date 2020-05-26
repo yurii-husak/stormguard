@@ -19,14 +19,15 @@
     .ba-footer__contact{
       max-width: 590px;
       width: 100%;
-      margin-bottom: 60px;
-      @include breakpoint(600) {
-        margin-bottom: 30px;
-      }
+      margin-bottom: 30px;
 
       .ba-footer__contact-us{
         display: flex;
         flex-direction: column;
+        margin-top: 15px;
+        @include breakpoint(large) {
+          margin-top: 24px;
+        }
 
         a{
           width: 100%;
@@ -40,9 +41,13 @@
           justify-content: center;
           font-family: Eurostile-Demi;
           font-size: 13px;
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box;
+          border: 1px solid #fff;
+          transition: all .5s;
           
           &:hover{
-            border: 1px solid #fff;
             background: $secondary-color;
             color: #fff;
           }
@@ -58,6 +63,10 @@
 
       .ba-footer__contact-form{
         position: relative;
+        margin-top: 15px;
+        @include breakpoint(large) {
+          margin-top: 24px;
+        }
 
         .wpcf7-validation-errors,
         .wpcf7-mail-sent-ok{
@@ -140,10 +149,14 @@
           padding: 10px;
           display: block;
           margin: 0 0 0 auto;
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box;
+          border: 1px solid #fff;
+          transition: all .5s;
 
           &:hover{
             background: $secondary-color;
-            border: 1px solid #fff;
             color: #fff;
           }
 
@@ -190,7 +203,7 @@
         background: #e6534f;
         position: absolute;
         left: 0;
-        top: -30px;
+        top: -20px;
         @include breakpoint(600) {
           top: -15px;
         }
@@ -215,12 +228,101 @@
 
     .ba-footer-contact__desc,
     .ba-footer-projects__desc{
-      font-size: 16px;
-      line-height: 24px;
-      margin-bottom: 15px;
+      font-size: 14px;
+      line-height: 21px;
       @include breakpoint(medium) {
-        font-size: 14px;
-        margin-bottom: 25px;
+        font-size: 16px;
+        line-height: 23px;
+      }
+    }
+
+    .ba-footer-projects__desc-link{
+      font-size: inherit;
+      line-height: inherit;
+      font-family: HelveticaBold;
+      border-bottom: 1px solid #fff;
+      color: #fff;
+
+      &:hover{
+        opacity: 0.5;
+      }
+    }
+
+    .ba-footer-projects__row{
+      margin: 0;
+      padding: 0;
+      justify-content: space-around;
+      @include breakpoint(medium) {
+        justify-content: space-between;
+      }
+
+      .ba-footer-projects__item{
+        width: 129px;
+        max-width: 129px;
+        height: 129px;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        border: 1px solid #fff;
+        position: relative;
+        transition: all .5s;
+        margin-top: 15px;
+        @include breakpoint(large) {
+          margin-top: 24px;
+        }
+
+        @include breakpoint(medium) {
+          margin-right: 20px;
+          &:nth-child(4n+4){
+            margin-right: 0;
+          }
+        }
+
+        &:before{
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, .5);
+          display: none;
+          transition: all .5s;
+        }
+        
+        &:hover{
+          &:before{
+            display: block;
+          }
+        }
+      }
+
+      .ba-footer-projects__button{
+        min-width: 212px;
+        min-height: 62px;
+        background: #fff;
+        color: $secondary-color;
+        font-size: 16px;
+        font-family: HelveticaBold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 15px auto 0;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        border: 1px solid #fff;
+        transition: all .5s;
+
+        &:hover{
+          background: transparent;
+          color: #fff;
+        }
+
+        @include breakpoint(large) {
+          margin-top: 24px;
+        }
       }
     }
   }

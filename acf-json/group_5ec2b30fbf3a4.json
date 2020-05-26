@@ -39,7 +39,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "all_services"
+                "value": "post"
             }
         ],
         [
@@ -51,9 +51,9 @@
         ],
         [
             {
-                "param": "page_parent",
+                "param": "page_template",
                 "operator": "==",
-                "value": "19"
+                "value": "page-templates\/who_we_are.php"
             }
         ]
     ],
@@ -65,5 +65,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1590058335
+    "modified": 1590498086
 }

@@ -44,7 +44,7 @@
 	float: right;
 }
 
-
+//Header Start
 .ba-header__top-bar{
 	background: #000;
 	font-size: 14px;
@@ -67,14 +67,8 @@
 				display: flex;
 				align-items: center;
 
-				i{
-					font-size: 12px;
-					margin-left: 11px;
-					transition: all .5s;
-				}
-
 				&:hover{
-					i{
+					.right-arrow{
 						margin-left: 22px;
 					}
 				}

@@ -27,7 +27,7 @@ if ( ! function_exists( 'foundationpress_pagination' ) ) :
 				'base'      => str_replace( $big, '%#%', html_entity_decode( get_pagenum_link( $big ) ) ),
 				'current'   => max( 1, get_query_var( 'paged' ) ),
 				'total'     => $wp_query->max_num_pages,
-				'mid_size'  => 5,
+				'mid_size'  => 2,
 				'prev_next' => true,
 				'prev_text' => __( '&laquo;', 'foundationpress' ),
 				'next_text' => __( '&raquo;', 'foundationpress' ),

@@ -66,22 +66,23 @@
 @import "global/wp-overrides";
 
 // Modules
-@import "modules/navigation";
+@import "modules/breadcrumbs";
 @import "modules/content";
-@import "modules/footer";
 @import "modules/editor-style";
-@import "modules/single-post";
+@import "modules/footer";
+@import "modules/franchise";
+@import "modules/get-started";
+@import "modules/navigation";
 @import "modules/pagination";
 @import "modules/services";
+@import "modules/testimonials";
 
 // Components
 @import "components/buttons";
 @import "components/links";
 
 // Templates
-@import "templates/front";
-@import "templates/franchise";
-@import "templates/testimonials";
-@import "templates/breadcrumbs";
-@import "templates/single-services";
 @import "templates/file_not_found";
+@import "templates/front";
+@import "templates/single-page";
+@import "templates/single-services-page";

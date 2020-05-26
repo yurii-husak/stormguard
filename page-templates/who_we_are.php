@@ -1,11 +1,7 @@
 <?php
-/**
- * The template for displaying all single posts and attachments
- *
- * @package FoundationPress
- * @since FoundationPress 1.0.0
- */
-
+/*
+Template Name: Who We Are
+*/
 get_header(); ?>
 <main class="ba-main-content">
     <article class="row">
@@ -24,5 +20,4 @@ get_header(); ?>
     <?php echo get_template_part('template-parts/content', 'get-started'); ?>
     <?php echo get_template_part('template-parts/content', 'franchise'); ?>
 </main>
-
-<?php get_footer();
+<?php get_footer(); ?>

@@ -63,6 +63,7 @@
     </section>
     <!-- /.ba-services -->
 
+    <?php echo get_template_part('template-parts/content', 'get-started'); ?>
     <?php echo get_template_part('template-parts/content', 'franchise'); ?>
 </main>
 <!-- /.ba-main-content -->

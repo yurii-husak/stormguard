@@ -7,7 +7,7 @@
             <div class="top-bar__left-side">
                 <a href="<?php the_field('top_bar_link', 'options'); ?>">
                     <?php the_field('top_bar_text', 'options'); ?>
-                    <i class="fa fa-chevron-right"></i>
+                    <img class="right-arrow" src="<?php echo get_template_directory_uri(); ?>/src/assets/img/right-arrow.png" alt="Right Arrow">
                 </a>
             </div>
             <!-- /.top-bar__left-side -->

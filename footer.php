@@ -9,7 +9,7 @@
  */
 $page = $_SERVER['REQUEST_URI'];
 ?>
-            <footer class="ba-footer__wrapper" id="ba-footer">
+            <footer class="ba-footer" id="ba-footer">
                 <div class="ba-footer__top-bar">
                     <div class="row ba-footer-top-bar__row">
                         <div class="column small-12 large-6 ba-footer__contact">
@@ -42,8 +42,51 @@ $page = $_SERVER['REQUEST_URI'];
                             <!-- /.ba-footer-projects__title -->
                             <p class="ba-footer-projects__desc">
                                 <?php the_field('footer_projects_description', 'options'); ?>
+                                <?php if($page != '/') : ?>
+                                    <a href="#" class="ba-footer-projects__desc-link">View the whole portfolio.</a>
+                                    <!-- /.ba-footer-projects__desc-link -->
+                                <?php endif; ?>
                             </p>
                             <!-- /.ba-footer-projects__desc -->
+                            <div class="row ba-footer-projects__row">
+                                <a href="#" class="column small-6 medium-3 ba-footer-projects__item"
+                                style="background-image: url(<?php echo get_template_directory_uri(); ?>/src/assets/img/past_project.jpg); background-repeat: no-repeat; background-position: center; -webkit-background-size: cover;background-size: cover;"></a>
+                                <!-- /.column small-6 medium-3 ba-footer-projects__item -->
+
+                                <a href="#" class="column small-6 medium-3 ba-footer-projects__item"
+                                   style="background-image: url(<?php echo get_template_directory_uri(); ?>/src/assets/img/past_project.jpg); background-repeat: no-repeat; background-position: center; -webkit-background-size: cover;background-size: cover;"></a>
+                                <!-- /.column small-6 medium-3 ba-footer-projects__item -->
+
+                                <a href="#" class="column small-6 medium-3 ba-footer-projects__item"
+                                   style="background-image: url(<?php echo get_template_directory_uri(); ?>/src/assets/img/past_project.jpg); background-repeat: no-repeat; background-position: center; -webkit-background-size: cover;background-size: cover;"></a>
+                                <!-- /.column small-6 medium-3 ba-footer-projects__item -->
+
+                                <a href="#" class="column small-6 medium-3 ba-footer-projects__item"
+                                   style="background-image: url(<?php echo get_template_directory_uri(); ?>/src/assets/img/past_project.jpg); background-repeat: no-repeat; background-position: center; -webkit-background-size: cover;background-size: cover;"></a>
+                                <!-- /.column small-6 medium-3 ba-footer-projects__item -->
+
+                                <a href="#" class="column small-6 medium-3 ba-footer-projects__item"
+                                   style="background-image: url(<?php echo get_template_directory_uri(); ?>/src/assets/img/past_project.jpg); background-repeat: no-repeat; background-position: center; -webkit-background-size: cover;background-size: cover;"></a>
+                                <!-- /.column small-6 medium-3 ba-footer-projects__item -->
+
+                                <a href="#" class="column small-6 medium-3 ba-footer-projects__item"
+                                   style="background-image: url(<?php echo get_template_directory_uri(); ?>/src/assets/img/past_project.jpg); background-repeat: no-repeat; background-position: center; -webkit-background-size: cover;background-size: cover;"></a>
+                                <!-- /.column small-6 medium-3 ba-footer-projects__item -->
+
+                                <a href="#" class="column small-6 medium-3 ba-footer-projects__item"
+                                   style="background-image: url(<?php echo get_template_directory_uri(); ?>/src/assets/img/past_project.jpg); background-repeat: no-repeat; background-position: center; -webkit-background-size: cover;background-size: cover;"></a>
+                                <!-- /.column small-6 medium-3 ba-footer-projects__item -->
+
+                                <a href="#" class="column small-6 medium-3 ba-footer-projects__item"
+                                   style="background-image: url(<?php echo get_template_directory_uri(); ?>/src/assets/img/past_project.jpg); background-repeat: no-repeat; background-position: center; -webkit-background-size: cover;background-size: cover;"></a>
+                                <!-- /.column small-6 medium-3 ba-footer-projects__item -->
+
+                                <?php if($page == '/') : ?>
+                                    <a href="#" class="column small-12 medium-4 ba-footer-projects__button">View More Photos</a>
+                                    <!-- /.column small-12 medium-4 ba-footer-projects__button -->
+                                <?php endif; ?>
+                            </div>
+                            <!-- /.row ba-footer-projects__row -->
                         </div>
                         <!-- /.column small-12 large-6 ba-footer__last-projects -->
                     </div>
@@ -71,7 +114,7 @@ $page = $_SERVER['REQUEST_URI'];
                 </div>
                 <!-- /.ba-footer__bottom-bar -->
             </footer>
-            <!-- /.ba-footer__wrapper -->
+            <!-- /.ba-footer -->
 
 		</div><!-- Close off-canvas wrapper inner -->
 	</div><!-- Close off-canvas wrapper -->

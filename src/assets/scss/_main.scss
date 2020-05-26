@@ -11,6 +11,10 @@ button{
 	@include ba-transition;
 }
 p{margin: 0;}
+.right-arrow{
+	margin-left: 11px;
+	transition: all .5s;
+}
 .page-header{
 	.page-title{
 		text-align: center;

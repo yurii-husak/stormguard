@@ -10,11 +10,21 @@
   }
 }
 .ba-single-post__title{
-  font-size: 34px;
+  text-align: center;
   font-family: Eurostile-Demi;
   color: $secondary-color;
   line-height: 1;
-  margin-bottom: 20px;
+  line-height: 30px;
+  margin: 0;
+  @include breakpoint(medium) {
+    text-align: left;
+    line-height: 39px;
+    margin-bottom: 10px;
+  }
+  @include breakpoint(large) {
+    margin-bottom: 20px;
+  }
+
 }
 .ba-single-post__content{
   font-size: 16px;
